@@ -175,6 +175,7 @@ const myObject = {
 console.log ( "Person as an object:" );
 console.log ( myObject );
 console.log ( `Name is: ${myObject.name} Age is: ${myObject.age}` );
+console.log ( `Name is: ${myObject.name} Hobbies are: ${myObject.hobbies}` );
 
 
 
