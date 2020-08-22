@@ -171,7 +171,7 @@ const myObject = {
     age: 38,
     hobbies: ["Skydiving", "Programming", "Mountain Climbing"]
 };
-
+//changes done
 console.log ( "Person as an object:" );
 console.log ( myObject );
 console.log ( `Name is: ${myObject.name} Age is: ${myObject.age}` );
