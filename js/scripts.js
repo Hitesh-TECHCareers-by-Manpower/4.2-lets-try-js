@@ -160,6 +160,8 @@ const myPersonInfoArray = [
 ];
 
 
+
+
 console.log ( "Person as an array:" );
 console.log ( myPersonInfoArray );
 console.log ( `Name is: ${myPersonInfoArray[0]}`);
