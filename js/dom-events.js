@@ -33,4 +33,21 @@ console.log( 'Outputted string into our <h2> element!');
 myH2.className = 'salmon-coloured-text';
 console.log ( 'Change the H2 fond colour to "salmon"');
 
+//event listeners.
+//we can add listerns to elements they listen for user actions.
+//when a user action is detedcted we can have our JS follow a set of instruction.
+
+console.log( firstSpan.classList);
+hoverButton.addEventListener( 'mouseenter', () => {
+    console.log( 'The mouse has entered the button!');
+    firstSpan.classList.add( 'salmon-coloured-text');
+    console.log( firstSpan.classList);
+} );
+
+hoverButton.addEventListener( 'mouseleave', () => {
+    console.log( 'The mouse has left the button!');
+    firstSpan.classList.remove( 'salmon-coloured-text');
+    console.log( firstSpan.classList);
+
+} );
 
