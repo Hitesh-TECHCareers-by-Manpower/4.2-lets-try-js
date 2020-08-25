@@ -23,19 +23,24 @@ helloForm.addEventListener( 'submit', ( event ) => {
 
     //how do i make a new LI element?
     const newLI = document.createElement( 'LI' );
+    const newCheckBox = document.createElement ( 'INPUT');
+    newCheckBox.type = "checkbox";
+    
     console.log( newLI );
 
     //How do i insert a valuve/text into the LI element?
 
     newLI.textContent = `Hello, ${name}!`;
+    newLI.appendChild( newCheckBox );
+    //newCheckBox.addEventListener( 'CLICK', () => {} );
     console.log( newLI.textContent );
     console.log( newLI );
 
+    
     //how do i add the LI element to the page
 
     helloList.appendChild( newLI );
     
     //
-    
-   
+      
     });
