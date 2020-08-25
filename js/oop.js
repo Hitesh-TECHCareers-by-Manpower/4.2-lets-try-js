@@ -36,7 +36,14 @@ class Person
         this.name = name;
         this.age = age;
         this.hobbies = hobbies;
+    }
 
+    sayHello ()
+    {
+        const helloP = document.createElement( "p");
+        helloP.textContent = `Hello there! I am ${this.name}, nice to meet you!`;
+
+        document.body.appendChild( helloP );
     }
 }
 
@@ -48,6 +55,21 @@ const jane = new Person(
 
 console.log( jane );
 console.log( jane instanceof Person );
+
+//run the sayHello
+jane.sayHello();
+
+const dimitri = new Person(
+    "Dimitri",
+    41,
+    ["Painting", "Driving"]
+);
+
+console.log( dimitri );
+console.log( `my name is ${dimitri.name}. i am ${dimitri.age} years old!`);
+
+dimitri.sayHello();
+
 
 
 
