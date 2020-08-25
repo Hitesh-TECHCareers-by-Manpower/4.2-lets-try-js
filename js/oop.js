@@ -73,6 +73,15 @@ class Person
         document.body.appendChild( hobbiesUL );
     }
 
+    addHobby ( hobby = "" )
+    {
+        if ( hobby.length > 0 )
+        {
+            this.hobbies.push( hobby );
+
+        }
+    }
+
 }
 
 const jane = new Person(
@@ -92,6 +101,10 @@ console.log( jane.age );
 jane.birthday();
 
 console.log( jane.age );
+
+jane.addHobby( "Cinematography" );
+jane.addHobby( "Chess" );
+jane.outputHobbies();
 
 const dimitri = new Person(
     "Dimitri",
