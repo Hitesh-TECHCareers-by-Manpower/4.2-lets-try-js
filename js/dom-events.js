@@ -1,65 +1,85 @@
-// alert( "DOM Events JS added!" );
-// console.log ("Dom Events JS loaded");
+// First thing's first... is our file loading into the browser?!
+// alert( "DOM Events JS loaded!" );
+// console.log( "DOM Events JS loaded!" );
+// ***Normally the above gets removed after your test...
+// ***This is just for your reference!
 
-//Targeting via the DOM in JavaScript
+/**
+ * Targeting via the DOM (Document Object Model) in JavaScript
+ */
 
+// Grab our H2 as practice.
 const myH2 = document.getElementById( 'target-me' );
-console.log ( myH2 );
+console.log( myH2 ); // We can see in console we successfully retrieved this element!
 
-
-//let's try  to grab paragraph
-
-const myP = document.querySelector( '#target-me + p');
-
+// Let's try and grab the proceeding paragraph...
+const myP = document.querySelector( '#target-me + p' ); // Target a <p> DIRECTLY AFTER the element with id="target-me"
 console.log( myP );
 
-const hoverButton = document.querySelector( 'p > button' );
+// Let's grab our hover button!
+const hoverButton = document.querySelector( 'p > button' ); // Remember... this grabs the FIRST match only.
 console.log( hoverButton );
 
-const firstSpan = document.querySelector ('p > span:nth-child(2)');
+// Grab our first span in the <p> (second child, in this case.)
+const firstSpan = document.querySelector( 'p > span:nth-child(2)' );
 console.log( firstSpan );
 
-const clickButton = document.querySelector( 'p >button:nth-of-type(2) ');
+// Let's grab our hover button!
+const clickButton = document.querySelector( 'p > button:nth-of-type(2)' );
 console.log( clickButton );
 
-const secondSpan = document.querySelector ('p > span:nth-child(4)');
+// Grab the second span in the <p> (fourth child, in this case.)
+const secondSpan = document.querySelector( 'p > span:nth-child(4)' );
 console.log( secondSpan );
 
+/**
+ * DOM / Element Manipulation
+ */
 
-//we can use JS to update /replace content in elements.
-myH2.textContent = "This H2 was found and updated!";
-console.log( 'Outputted string into our <h2> element!');
-
+// We can use JS to update / replace content in elements.
+myH2.textContent = "This H2 Was Found and Updated!";
+console.log( 'Outputted string into our <h2> element!' );
+// We are replacing the existing CSS string.
 myH2.className = 'salmon-coloured-text';
-console.log ( 'Change the H2 fond colour to "salmon"');
+console.log( 'Change the H2 font colour to "salmon."' );
 
-//event listeners.
-//we can add listerns to elements they listen for user actions.
-//when a user action is detedcted we can have our JS follow a set of instruction.
+/**
+ * Event Listeners.
+ * We can add "listeners" to elements... they "listen" for user actions.
+ * When a user action is detected, we can have our JS follow a set of instructions.
+ */
 
-console.log( firstSpan.classList);
+// We can add event listeners to HTMLElement objects.
+/**
+ * There are two arguments to the addEventListener method:
+ *   1) The type of event (by name.)
+ *   2) The instructions (what should run when the event occurs.)
+ *      (This means: a function!)
+ */
+console.log( firstSpan.classList ); // List of classes applied to our element.
 hoverButton.addEventListener( 'mouseenter', () => {
-    console.log( 'The mouse has entered the button!');
-    firstSpan.classList.add( 'salmon-coloured-text');
-    console.log( firstSpan.classList);
+  console.log( 'The mouse has entered the button!' );
+  // Add our class to the list for this element...
+  firstSpan.classList.add( 'salmon-coloured-text' );
+  console.log( firstSpan.classList ); // Let's see if it worked!
 } );
 
 hoverButton.addEventListener( 'mouseleave', () => {
-    console.log( 'The mouse has left the button!');
-    firstSpan.classList.remove( 'salmon-coloured-text');
-    console.log( firstSpan.classList);
+  console.log( 'The mouse has left the button!' );
+  // Remove our class from the list for this element...
+  firstSpan.classList.remove( 'salmon-coloured-text' );
+  console.log( firstSpan.classList ); // Let's see if it worked!
 } );
 
+// Let's listen for a click on this button element...
 clickButton.addEventListener( 'click', () => {
-    console.log( 'The "click" button was clicked.');
-    if (secondSpan.classList.contains( 'salmon-coloured-text') )
-    {
-        secondSpan.classList.remove( 'salmon-coloured-text');
-    }
-    else{
-        secondSpan.classList.add( 'salmon-coloured-text');
-    }
-});
-
-
-
+  console.log( 'The "click" button was clicked.' );
+  if ( secondSpan.classList.contains( 'salmon-coloured-text' ) )
+  { // If the class is already there... remove it!
+    secondSpan.classList.remove( 'salmon-coloured-text' );
+  }
+  else
+  { // If the class is NOT already there... add it!
+    secondSpan.classList.add( 'salmon-coloured-text' );
+  }
+} );
