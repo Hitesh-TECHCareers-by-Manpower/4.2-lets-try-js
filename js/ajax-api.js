@@ -37,7 +37,34 @@ fetch( 'http://api.open-notify.org/astros.json' )
       peopleUL.appendChild( personLI );
     } // Don't forget to add the UL to the browser so we can see it!
     document.body.appendChild( peopleUL );
+  } )
+
+  .catch( error => {
+      console.log( error );
   } );
+
+  /**
+   * Let's see about grabbling live data based on timer
+   */
+
+    const latDD = document.getElementById( 'lat' );
+    const longDD = document.getElementById( 'long' );
+        console.log( latDD );
+        console.log( longDD );
+
+//add a function that grabs data from our API and updates the element
+
+    const updateLatLong = () => {
+        fetch ( 'http://api.open-notify.org/iss-now.json' )
+        .then( response => { return response.json(); } )
+        .then( data => {
+            console.log( data );
+        }   )
+        .catch( error => {console.log( error ); } );
+    }
+//add a repeating "timer" so that this funcion can repeat.
+
+
 
 
 
