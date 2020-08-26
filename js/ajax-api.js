@@ -59,10 +59,24 @@ fetch( 'http://api.open-notify.org/astros.json' )
         .then( response => { return response.json(); } )
         .then( data => {
             console.log( data );
+
+            const lat = data.iss_position.latitude;
+            const long = data.iss_position.longitude;
+
+            latDD.textContent = lat;
+            longDD.textContent = long;
+
         }   )
         .catch( error => {console.log( error ); } );
     }
-//add a repeating "timer" so that this funcion can repeat.
+
+    updateLatLong();
+
+    //add a repeating "timer" so that this funcion can repeat.
+
+    setInterval( updateLatLong, 1500 ); // repeat updateLatLong every 1.5 seconds (1500 ms.)
+
+    
 
 
 
